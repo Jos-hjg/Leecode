@@ -16,9 +16,10 @@ struct TreeNode {
 
 
 class Solution {
-    public:
+    private:
         int ans = 0;
         int depth = -1;
+    public:
         int minNumberOfHours(int initialEnergy, int initialExperience, vector<int>& energy, vector<int>& experience);
         string largestPalindromic(string num);
         int amountOfTime(TreeNode* root, int start);

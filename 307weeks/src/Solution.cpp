@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 #include "../header/Solution.h"
 
 using namespace std;
@@ -9,12 +8,12 @@ int Solution::dfs(TreeNode* root, int level, int start)
     if(root == nullptr) return 0;
     if(root->val == start) depth = level;   //判断初始感染是否为当前节点
     int l = dfs(root->left, level + 1, start); //左子树高度
-    bool inLeft = depth != -1;
-    int r = dfs(root->right, level + 1, start);
-    if(root->val == start) ans = max(ans, max(l, r));
-    if(inLeft) ans = max(ans, depth - level + r);
-    else ans = max(ans, depth - level + l);
-    return max(l, r);
+    bool inLeft = depth != -1;  //判断是否在左子树
+    int r = dfs(root->right, level + 1, start);  //右子树高度
+    if(root->val == start) ans = max(ans, max(l, r));  //起始点在根节点
+    if(inLeft) ans = max(ans, depth - level + r);      //起始点在左子树
+    else ans = max(ans, depth - level + l);            //起始点在右子树
+    return max(l, r) + 1;                              //返回当前节点树高
 }
 
 int Solution::amountOfTime(TreeNode* root, int start)
