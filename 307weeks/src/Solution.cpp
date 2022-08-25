@@ -1,19 +1,26 @@
 #include <iostream>
+#include <cmath>
 #include "../header/Solution.h"
 
 using namespace std;
 
+int Solution::dfs(TreeNode* root, int level, int start)
+{
+    if(root == nullptr) return 0;
+    if(root->val == start) depth = level;   //判断初始感染是否为当前节点
+    int l = dfs(root->left, level + 1, start); //左子树高度
+    bool inLeft = depth != -1;
+    int r = dfs(root->right, level + 1, start);
+    if(root->val == start) ans = max(ans, max(l, r));
+    if(inLeft) ans = max(ans, depth - level + r);
+    else ans = max(ans, depth - level + l);
+    return max(l, r);
+}
 
 int Solution::amountOfTime(TreeNode* root, int start)
 {
-    int ans = 0;  //耗时
-    int rl = 0;  //root 节点左分支深度
-    int rr = 0;  //root 节点右分支深度
-    int rs = 0;  //记录开始感染的节点深度
-    int branch; //0:root，1:左分支，2:右分支
-    //looking for start node
-    while()
-
+    dfs(root, 0, start);
+    return ans;
 }
 
 // 你正在参加一场比赛，给你两个 正 整数 initialEnergy 和 initialExperience 分别表示你的初始精力和初始经验。

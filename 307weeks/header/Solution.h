@@ -2,6 +2,7 @@
 // #define SOLUTION_H
 #include <vector>
 #include <string>
+#include <math.h>
 using namespace std;
 
 struct TreeNode {
@@ -16,9 +17,12 @@ struct TreeNode {
 
 class Solution {
     public:
+        int ans = 0;
+        int depth = -1;
         int minNumberOfHours(int initialEnergy, int initialExperience, vector<int>& energy, vector<int>& experience);
         string largestPalindromic(string num);
         int amountOfTime(TreeNode* root, int start);
+        int dfs(TreeNode* root, int level, int start);
 };
 
 // #endif
