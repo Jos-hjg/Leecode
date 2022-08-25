@@ -16,6 +16,6 @@ int main(){
     // vector<int> experience(exp, exp+5);
     // cout<<ss.minNumberOfHours(2, 4, energy, experience)<<endl;
     // cout<<ss.largestPalindromic("00000")<<endl;
-    cout<<ss.amountOfTime(b, 3)<<endl;
+    cout<<ss.amountOfTime(b, 7)<<endl;
     return 0;
 }

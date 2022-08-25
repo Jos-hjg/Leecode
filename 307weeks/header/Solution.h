@@ -1,5 +1,6 @@
 // #ifndef SOLUTION_H
 // #define SOLUTION_H
+#include <algorithm>
 #include <vector>
 #include <string>
 #include <math.h>
