@@ -18,6 +18,11 @@ int main(){
     // cout<<ss.largestPalindromic("00000")<<endl;
     // cout<<ss.amountOfTime(b, 8)<<endl;
     vector<int> ans;
-    cout<<ss.dfs(b, 0)<<endl;
+    ss.T2V(b, ans);
+    for(int i = 0; i < ans.size(); i++)
+    {
+        cout<<ans[i];
+    }
+    cout<<endl;
     return 0;
 }
