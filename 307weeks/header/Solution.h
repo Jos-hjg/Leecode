@@ -25,6 +25,9 @@ class Solution {
         string largestPalindromic(string num);
         int amountOfTime(TreeNode* root, int start);
         int dfs(TreeNode* root, int level, int start);
+        int dfs(TreeNode* root, int level);
+        //遍历二叉树到res
+        int T2V(TreeNode* root, vector<int>& res);
 };
 
 // #endif

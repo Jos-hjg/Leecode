@@ -3,6 +3,24 @@
 
 using namespace std;
 
+int Solution::T2V(TreeNode* root, vector<int>& res)
+{
+    if(root == nullptr) return 0;
+    res.push_back(root->val);
+    T2V(root->left, res);
+    T2V(root->right, res);
+    return 0;
+}
+
+int Solution::dfs(TreeNode* root, int level)
+{
+    if(root == nullptr) return 0;
+    int l = dfs(root->left, level + 1);
+    int r = dfs(root->right, level + 1);
+    return max(l, r) + 1;
+}
+
+//网络答案
 int Solution::dfs(TreeNode* root, int level, int start)
 {
     if(root == nullptr) return 0;
